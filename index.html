@@ -8,80 +8,94 @@
 /* Overall Layout */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Georgia, serif; /* Slight font update for cleaner look */
+    font-family: 'Segoe UI', Georgia, serif;
     background: #f7f7f7;
 }
 
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 260px;
-    position: fixed;
-    background-color: #2c3e50;
-    color: white;
-    padding-top: 20px;
+/* --- CHANGED: SIDEBAR IS NOW A TOP NAVBAR --- */
+.navbar {
+    width: 100%;
+    height: 70px;             /* Fixed height for top bar */
+    position: fixed;          /* Stays at the top while scrolling */
     top: 0;
     left: 0;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;            /* Makes items sit in a row */
+    align-items: center;      /* Vertically centers items */
+    padding: 0 20px;          /* Padding on sides */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;            /* Ensures it sits on top of everything */
 }
 
-.sidebar img {
-    width: 160px;
-    height: 160px;
+/* Small Logo Image */
+.navbar img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    display: block;
-    margin: 10px auto;
-    border: 3px solid #ecf0f1;
-    object-fit: cover; /* Ensures image doesn't stretch */
+    border: 2px solid #ecf0f1;
+    margin-right: 15px;
+    object-fit: cover;
 }
 
-.sidebar h2 {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 22px;
+/* Name in Navbar */
+.navbar h2 {
+    margin: 0;
+    font-size: 20px;
+    white-space: nowrap;      /* Prevents name from wrapping */
+    margin-right: auto;       /* Pushes links to the far right */
 }
 
-.sidebar a {
-    padding: 15px 25px;
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+}
+
+/* Navigation Links */
+.navbar a {
+    padding: 0 20px;
+    line-height: 70px;        /* Matches navbar height to center text */
     text-decoration: none;
     color: #ecf0f1;
-    display: block;
-    font-size: 18px;
-    cursor: pointer; /* Shows hand icon on hover */
+    font-size: 16px;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
-.sidebar a:hover {
+.navbar a:hover {
     background-color: #34495e;
 }
 
-/* Style for the currently active link in sidebar */
-.sidebar a.active-link {
+.navbar a.active-link {
     background-color: #1abc9c;
     color: white;
     font-weight: bold;
 }
 
-/* Main Content */
+/* --- CONTENT ADJUSTMENTS --- */
 .content {
-    margin-left: 260px; /* Same as sidebar width */
-    padding: 50px;
+    margin-left: 0;           /* No longer pushed by sidebar */
+    margin-top: 80px;         /* Pushed DOWN to not hide behind navbar */
+    padding: 40px;
     max-width: 900px;
+    margin-right: auto;       /* Centers content horizontally */
+    margin-left: auto;        /* Centers content horizontally */
 }
 
-h2 {
+h2.section-title {
     color: #2c3e50;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
     font-size: 28px;
+    margin-top: 0;
 }
 
-/* HIDE SECTIONS LOGIC */
+/* HIDE SECTIONS LOGIC (Same as before) */
 .section {
-    display: none; /* Everything hidden by default */
-    animation: fadeIn 0.5s; /* Smooth fade in effect */
+    display: none;
+    animation: fadeIn 0.5s;
 }
 
-/* This class makes a section visible */
 .section.active-section {
     display: block; 
 }
@@ -118,21 +132,23 @@ footer {
 
 <body>
 
-<div class="sidebar">
+<div class="navbar">
     <img src="DP.png" alt="Profile Photo"> 
     <h2>Ajoy Rjbongshi</h2>
 
-    <a onclick="showSection('about')" id="link-about" class="active-link">About Me</a>
-    <a onclick="showSection('education')" id="link-education">Education & Experience</a>
-    <a onclick="showSection('research')" id="link-research">Research</a>
-    <a onclick="showSection('projects')" id="link-projects">Projects</a>
-    <a onclick="showSection('teaching')" id="link-teaching">Teaching</a>
+    <div class="nav-links">
+        <a onclick="showSection('about')" id="link-about" class="active-link">About Me</a>
+        <a onclick="showSection('education')" id="link-education">Education</a>
+        <a onclick="showSection('research')" id="link-research">Research</a>
+        <a onclick="showSection('projects')" id="link-projects">Projects</a>
+        <a onclick="showSection('teaching')" id="link-teaching">Teaching</a>
+    </div>
 </div>
 
 <div class="content">
 
     <section id="about" class="section active-section">
-        <h2>About Me</h2>
+        <h2 class="section-title">About Me</h2>
         <p>
             I am a graduate student in the <strong>Master of Science in Mathematical Sciences (Statistics)</strong> 
             program at Clemson University. My academic interests lie primarily in 
@@ -144,14 +160,10 @@ footer {
             and statistical modeling for public health data</strong>. As both an instructor and teaching assistant, 
             I enjoy mentoring students and helping them build strong quantitative foundations.
         </p>
-        <p>
-            My long-term goal is to pursue a research-focused career in academia or biomedical statistics, 
-            where I can contribute to methodological research and health data science.
-        </p>
     </section>
 
     <section id="education" class="section">
-        <h2>Education & Experience</h2>
+        <h2 class="section-title">Education & Experience</h2>
 
         <h3>Education</h3>
         <ul>
@@ -175,7 +187,7 @@ footer {
     </section>
 
     <section id="research" class="section">
-        <h2>Research</h2>
+        <h2 class="section-title">Research</h2>
 
         <h3>Publications & Submitted Papers</h3>
         <ul>
@@ -194,14 +206,10 @@ footer {
             <strong>Multidimensional Energy Poverty in Bangladesh (Master’s Thesis)</strong><br>
             Examined MEPI trends and predictors using ML models.
         </div>
-        <div class="project-box">
-            <strong>Determinants of Acute Respiratory Infections (Undergraduate Project)</strong><br>
-            Logistic regression analysis using BDHS 2017–18 data.
-        </div>
     </section>
 
     <section id="projects" class="section">
-        <h2>Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="project-box">
             <strong>COVID-19 Trend Analysis Shiny App</strong><br>
             Interactive visualization of COVID-19 data in Bangladesh.<br>
@@ -220,18 +228,16 @@ footer {
     </section>
 
     <section id="teaching" class="section">
-        <h2>Teaching</h2>
+        <h2 class="section-title">Teaching</h2>
         <h3>Instructor — Clemson University</h3>
         <ul>
             <li>STAT-2220: Statistics in Everyday Life</li>
             <li>Designed lectures, exercises, and assessments</li>
-            <li>Provided student mentoring and statistical support</li>
         </ul>
         <h3>Graduate Teaching Assistant</h3>
         <ul>
             <li>Led R programming labs</li>
             <li>Graded projects and exams</li>
-            <li>Supported students through office hours</li>
         </ul>
     </section>
 
@@ -255,20 +261,18 @@ footer {
             activeSection.classList.add('active-section');
         }
 
-        // 3. Update the Sidebar highlight
-        // Remove 'active-link' from all links
-        const links = document.querySelectorAll('.sidebar a');
+        // 3. Update the Navbar highlight
+        const links = document.querySelectorAll('.navbar a');
         links.forEach(link => {
             link.classList.remove('active-link');
         });
 
-        // Add 'active-link' to the clicked link
         const activeLink = document.getElementById('link-' + sectionId);
         if (activeLink) {
             activeLink.classList.add('active-link');
         }
 
-        // 4. Scroll to top of content (for mobile or long pages)
+        // 4. Scroll to top
         window.scrollTo(0, 0);
     }
 </script>
