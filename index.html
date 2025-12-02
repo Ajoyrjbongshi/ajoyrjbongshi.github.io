@@ -2,84 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ajoy Rjbongshi | Academic Portfolio</title>
 
 <style>
-/* Overall Layout */
+/* --- GENERAL STYLES --- */
 body {
     margin: 0;
     font-family: 'Segoe UI', Georgia, serif;
-    background: #f7f7f7;
+    background-color: #f7f7f7;
+    color: #333;
 }
 
-/* --- CHANGED: SIDEBAR IS NOW A TOP NAVBAR --- */
-.navbar {
-    width: 100%;
-    height: 70px;             /* Fixed height for top bar */
-    position: fixed;          /* Stays at the top while scrolling */
-    top: 0;
-    left: 0;
-    background-color: #2c3e50;
+/* --- HERO HEADER (Top Center) --- */
+.hero-header {
+    background-color: #2c3e50; /* Dark Blue Background */
     color: white;
-    display: flex;            /* Makes items sit in a row */
-    align-items: center;      /* Vertically centers items */
-    padding: 0 20px;          /* Padding on sides */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000;            /* Ensures it sits on top of everything */
+    text-align: center;       /* Centers everything inside */
+    padding: 40px 20px 20px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Small Logo Image */
-.navbar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #ecf0f1;
-    margin-right: 15px;
+/* Profile Picture */
+.hero-header img {
+    width: 150px;             /* Large profile picture */
+    height: 150px;
+    border-radius: 50%;       /* Circle shape */
+    border: 5px solid #fff;   /* White border around image */
     object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Name in Navbar */
-.navbar h2 {
+/* Name */
+.hero-header h1 {
     margin: 0;
-    font-size: 20px;
-    white-space: nowrap;      /* Prevents name from wrapping */
-    margin-right: auto;       /* Pushes links to the far right */
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Navigation Links Container */
-.nav-links {
+/* Navigation Menu (Centered) */
+.nav-bar {
+    margin-top: 25px;
     display: flex;
+    justify-content: center;  /* Centers links horizontally */
+    flex-wrap: wrap;          /* Allows links to stack on small screens */
+    gap: 10px;                /* Space between links */
 }
 
-/* Navigation Links */
-.navbar a {
-    padding: 0 20px;
-    line-height: 70px;        /* Matches navbar height to center text */
+.nav-bar a {
     text-decoration: none;
     color: #ecf0f1;
     font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.2s;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
-.navbar a:hover {
+.nav-bar a:hover {
     background-color: #34495e;
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
-.navbar a.active-link {
-    background-color: #1abc9c;
+/* Active Link Style (The button stays bright) */
+.nav-bar a.active-link {
+    background-color: #1abc9c; /* Green highlight */
     color: white;
     font-weight: bold;
 }
 
-/* --- CONTENT ADJUSTMENTS --- */
-.content {
-    margin-left: 0;           /* No longer pushed by sidebar */
-    margin-top: 80px;         /* Pushed DOWN to not hide behind navbar */
-    padding: 40px;
+/* --- MAIN CONTENT AREA --- */
+.content-container {
     max-width: 900px;
-    margin-right: auto;       /* Centers content horizontally */
-    margin-left: auto;        /* Centers content horizontally */
+    margin: 40px auto;        /* Centers the content block */
+    padding: 0 20px;
+    min-height: 500px;
 }
 
 h2.section-title {
@@ -90,10 +89,10 @@ h2.section-title {
     margin-top: 0;
 }
 
-/* HIDE SECTIONS LOGIC (Same as before) */
+/* --- SECTIONS (Hidden by default) --- */
 .section {
     display: none;
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.6s ease;
 }
 
 .section.active-section {
@@ -105,6 +104,7 @@ h2.section-title {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- ITEM STYLES --- */
 ul {
     line-height: 1.8;
 }
@@ -120,162 +120,160 @@ ul {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     color: #888;
     font-size: 14px;
-    margin-top: 50px;
     border-top: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .hero-header h1 { font-size: 24px; }
+    .hero-header img { width: 120px; height: 120px; }
+    .nav-bar a { font-size: 14px; padding: 6px 10px; }
 }
 </style>
 
 </head>
-
 <body>
 
-<div class="navbar">
-    <img src="DP.png" alt="Profile Photo"> 
-    <h2>Ajoy Rjbongshi</h2>
+    <header class="hero-header">
+        <img src="DP.png" alt="Ajoy Rjbongshi">
+        
+        <h1>Ajoy Rjbongshi</h1>
 
-    <div class="nav-links">
-        <a onclick="showSection('about')" id="link-about" class="active-link">About Me</a>
-        <a onclick="showSection('education')" id="link-education">Education</a>
-        <a onclick="showSection('research')" id="link-research">Research</a>
-        <a onclick="showSection('projects')" id="link-projects">Projects</a>
-        <a onclick="showSection('teaching')" id="link-teaching">Teaching</a>
+        <nav class="nav-bar">
+            <a onclick="showSection('about')" id="link-about" class="active-link">About Me</a>
+            <a onclick="showSection('education')" id="link-education">Education & Experience</a>
+            <a onclick="showSection('research')" id="link-research">Research</a>
+            <a onclick="showSection('projects')" id="link-projects">Projects</a>
+            <a onclick="showSection('teaching')" id="link-teaching">Teaching</a>
+        </nav>
+    </header>
+
+    <div class="content-container">
+
+        <section id="about" class="section active-section">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a graduate student in the <strong>Master of Science in Mathematical Sciences (Statistics)</strong> 
+                program at Clemson University. My academic interests lie primarily in 
+                <strong>survival analysis, biostatistics, causal inference, machine learning, and clinical research</strong>. 
+                I enjoy statistical computing, data visualization, and method development for high-dimensional data.
+            </p>
+            <p>
+                I have authored research on <strong>energy poverty prediction, mental health epidemiology, 
+                and statistical modeling for public health data</strong>. As both an instructor and teaching assistant, 
+                I enjoy mentoring students and helping them build strong quantitative foundations.
+            </p>
+            <p>
+                My long-term goal is to pursue a research-focused career in academia or biomedical statistics, 
+                where I can contribute to methodological research and health data science.
+            </p>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title">Education & Experience</h2>
+
+            <h3>Education</h3>
+            <ul>
+                <li><strong>Clemson University</strong> — MS in Mathematical Sciences (Statistics), GPA 3.71</li>
+                <li><strong>University of Dhaka</strong> — MS in Statistics, GPA 3.76 (WES)</li>
+                <li><strong>University of Dhaka</strong> — BS in Statistics, GPA 3.96 (WES)</li>
+            </ul>
+
+            <h3>Professional Experience</h3>
+            <h4>Graduate Teacher of Record — Clemson University</h4>
+            <ul>
+                <li>Instructor for STAT-2220: Statistics in Everyday Life</li>
+                <li>Delivering lectures, designing assessments, and mentoring students</li>
+            </ul>
+
+            <h4>Graduate Teaching Assistant — Clemson University</h4>
+            <ul>
+                <li>R programming labs for Statistical Methods and Multivariate Analysis</li>
+                <li>Grader and academic support for multiple statistics courses</li>
+            </ul>
+        </section>
+
+        <section id="research" class="section">
+            <h2 class="section-title">Research</h2>
+            <h3>Publications & Submitted Papers</h3>
+            <ul>
+                <li><strong>Machine learning-based prediction of energy poverty</strong>, SEPS (2025)</li>
+                <li><strong>A Zero-Truncated Generalized Poisson Approach</strong>, BMC Public Health (Under review)</li>
+                <li>Mental health disorder trends in U.S. adults — IJMHA (Under review)</li>
+                <li>Regional mental health trends in older adults — JAD (Under review)</li>
+            </ul>
+            <h3>Research Projects</h3>
+            <div class="project-box">
+                <strong>Machine Learning in Survival Analysis (Master’s Project)</strong><br>
+                Clemson University — 2025–Present
+            </div>
+            <div class="project-box">
+                <strong>Multidimensional Energy Poverty in Bangladesh (Master’s Thesis)</strong><br>
+                Examined MEPI trends and predictors using ML models.
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-box">
+                <strong>COVID-19 Trend Analysis Shiny App</strong><br>
+                Interactive visualization of COVID-19 data in Bangladesh.<br>
+                <a href="https://ajoyrjbongshi.shinyapps.io/covid-19/" target="_blank">View App</a>
+            </div>
+            <div class="project-box">
+                <strong>BDHS Socio-Demographic Analysis App</strong><br>
+                Shiny app for exploring BDHS survey trends (2007–2017).<br>
+                <a href="https://ajoyrjbongshi.shinyapps.io/Report_app/" target="_blank">View App</a>
+            </div>
+            <div class="project-box">
+                <strong>Hypothesis Testing Interactive Tool</strong><br>
+                User-friendly interface for testing means and proportions.<br>
+                <a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/" target="_blank">View App</a>
+            </div>
+        </section>
+
+        <section id="teaching" class="section">
+            <h2 class="section-title">Teaching</h2>
+            <h3>Instructor — Clemson University</h3>
+            <ul>
+                <li>STAT-2220: Statistics in Everyday Life</li>
+                <li>Designed lectures, exercises, and assessments</li>
+            </ul>
+            <h3>Graduate Teaching Assistant</h3>
+            <ul>
+                <li>Led R programming labs</li>
+                <li>Graded projects and exams</li>
+            </ul>
+        </section>
+
     </div>
-</div>
-
-<div class="content">
-
-    <section id="about" class="section active-section">
-        <h2 class="section-title">About Me</h2>
-        <p>
-            I am a graduate student in the <strong>Master of Science in Mathematical Sciences (Statistics)</strong> 
-            program at Clemson University. My academic interests lie primarily in 
-            <strong>survival analysis, biostatistics, causal inference, machine learning, and clinical research</strong>. 
-            I enjoy statistical computing, data visualization, and method development for high-dimensional data.
-        </p>
-        <p>
-            I have authored research on <strong>energy poverty prediction, mental health epidemiology, 
-            and statistical modeling for public health data</strong>. As both an instructor and teaching assistant, 
-            I enjoy mentoring students and helping them build strong quantitative foundations.
-        </p>
-    </section>
-
-    <section id="education" class="section">
-        <h2 class="section-title">Education & Experience</h2>
-
-        <h3>Education</h3>
-        <ul>
-            <li><strong>Clemson University</strong> — MS in Mathematical Sciences (Statistics), GPA 3.71</li>
-            <li><strong>University of Dhaka</strong> — MS in Statistics, GPA 3.76 (WES)</li>
-            <li><strong>University of Dhaka</strong> — BS in Statistics, GPA 3.96 (WES)</li>
-        </ul>
-
-        <h3>Professional Experience</h3>
-        <h4>Graduate Teacher of Record — Clemson University</h4>
-        <ul>
-            <li>Instructor for STAT-2220: Statistics in Everyday Life</li>
-            <li>Delivering lectures, designing assessments, and mentoring students</li>
-        </ul>
-
-        <h4>Graduate Teaching Assistant — Clemson University</h4>
-        <ul>
-            <li>R programming labs for Statistical Methods and Multivariate Analysis</li>
-            <li>Grader and academic support for multiple statistics courses</li>
-        </ul>
-    </section>
-
-    <section id="research" class="section">
-        <h2 class="section-title">Research</h2>
-
-        <h3>Publications & Submitted Papers</h3>
-        <ul>
-            <li><strong>Machine learning-based prediction of energy poverty</strong>, SEPS (2025)</li>
-            <li><strong>A Zero-Truncated Generalized Poisson Approach</strong>, BMC Public Health (Under review)</li>
-            <li>Mental health disorder trends in U.S. adults — IJMHA (Under review)</li>
-            <li>Regional mental health trends in older adults — JAD (Under review)</li>
-        </ul>
-
-        <h3>Research Projects</h3>
-        <div class="project-box">
-            <strong>Machine Learning in Survival Analysis (Master’s Project)</strong><br>
-            Clemson University — 2025–Present
-        </div>
-        <div class="project-box">
-            <strong>Multidimensional Energy Poverty in Bangladesh (Master’s Thesis)</strong><br>
-            Examined MEPI trends and predictors using ML models.
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-box">
-            <strong>COVID-19 Trend Analysis Shiny App</strong><br>
-            Interactive visualization of COVID-19 data in Bangladesh.<br>
-            <a href="https://ajoyrjbongshi.shinyapps.io/covid-19/" target="_blank">View App</a>
-        </div>
-        <div class="project-box">
-            <strong>BDHS Socio-Demographic Analysis App</strong><br>
-            Shiny app for exploring BDHS survey trends (2007–2017).<br>
-            <a href="https://ajoyrjbongshi.shinyapps.io/Report_app/" target="_blank">View App</a>
-        </div>
-        <div class="project-box">
-            <strong>Hypothesis Testing Interactive Tool</strong><br>
-            User-friendly interface for testing means and proportions.<br>
-            <a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/" target="_blank">View App</a>
-        </div>
-    </section>
-
-    <section id="teaching" class="section">
-        <h2 class="section-title">Teaching</h2>
-        <h3>Instructor — Clemson University</h3>
-        <ul>
-            <li>STAT-2220: Statistics in Everyday Life</li>
-            <li>Designed lectures, exercises, and assessments</li>
-        </ul>
-        <h3>Graduate Teaching Assistant</h3>
-        <ul>
-            <li>Led R programming labs</li>
-            <li>Graded projects and exams</li>
-        </ul>
-    </section>
 
     <footer>
         © 2025 Ajoy Rjbongshi — Clemson University
     </footer>
 
-</div>
+    <script>
+        function showSection(sectionId) {
+            // 1. Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.classList.remove('active-section'));
 
-<script>
-    function showSection(sectionId) {
-        // 1. Hide all sections
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active-section');
-        });
+            // 2. Show the selected section
+            const activeSec = document.getElementById(sectionId);
+            if(activeSec) activeSec.classList.add('active-section');
 
-        // 2. Show the specific section clicked
-        const activeSection = document.getElementById(sectionId);
-        if (activeSection) {
-            activeSection.classList.add('active-section');
+            // 3. Update the Nav Button Colors
+            const links = document.querySelectorAll('.nav-bar a');
+            links.forEach(link => link.classList.remove('active-link'));
+
+            const activeLink = document.getElementById('link-' + sectionId);
+            if(activeLink) activeLink.classList.add('active-link');
         }
-
-        // 3. Update the Navbar highlight
-        const links = document.querySelectorAll('.navbar a');
-        links.forEach(link => {
-            link.classList.remove('active-link');
-        });
-
-        const activeLink = document.getElementById('link-' + sectionId);
-        if (activeLink) {
-            activeLink.classList.add('active-link');
-        }
-
-        // 4. Scroll to top
-        window.scrollTo(0, 0);
-    }
-</script>
+    </script>
 
 </body>
 </html>
