@@ -18,19 +18,19 @@ body {
 .hero-header {
     background-color: #2c3e50; /* Dark Blue Background */
     color: white;
-    text-align: center;       /* Centers everything inside */
+    text-align: center;
     padding: 40px 20px 20px 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* Profile Picture */
 .hero-header img {
-    width: 150px;             /* Large profile picture */
+    width: 150px;
     height: 150px;
-    border-radius: 50%;       /* Circle shape */
-    border: 5px solid #fff;   /* White border around image */
+    border-radius: 50%;
+    border: 5px solid #fff;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
@@ -42,13 +42,31 @@ body {
     letter-spacing: 1px;
 }
 
-/* Navigation Menu (Centered) */
+/* --- NEW: CONTACT LINKS --- */
+.contact-info {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: #bdc3c7; /* Light grey text */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #1abc9c; /* Green on hover */
+    text-decoration: underline;
+}
+
+/* Navigation Menu */
 .nav-bar {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;  /* Centers links horizontally */
-    flex-wrap: wrap;          /* Allows links to stack on small screens */
-    gap: 10px;                /* Space between links */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .nav-bar a {
@@ -63,12 +81,11 @@ body {
 
 .nav-bar a:hover {
     background-color: #34495e;
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(-2px);
 }
 
-/* Active Link Style (The button stays bright) */
 .nav-bar a.active-link {
-    background-color: #1abc9c; /* Green highlight */
+    background-color: #1abc9c;
     color: white;
     font-weight: bold;
 }
@@ -76,7 +93,7 @@ body {
 /* --- MAIN CONTENT AREA --- */
 .content-container {
     max-width: 900px;
-    margin: 40px auto;        /* Centers the content block */
+    margin: 40px auto;
     padding: 0 20px;
     min-height: 500px;
 }
@@ -87,6 +104,18 @@ h2.section-title {
     padding-bottom: 10px;
     font-size: 28px;
     margin-top: 0;
+}
+
+/* --- LINKS INSIDE TEXT (Like Clemson University) --- */
+.content-link {
+    color: #2980b9; /* Nice blue color */
+    text-decoration: none;
+    border-bottom: 1px dotted #2980b9;
+}
+
+.content-link:hover {
+    color: #e74c3c;
+    border-bottom: 1px solid #e74c3c;
 }
 
 /* --- SECTIONS (Hidden by default) --- */
@@ -104,7 +133,6 @@ h2.section-title {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- ITEM STYLES --- */
 ul {
     line-height: 1.8;
 }
@@ -127,25 +155,29 @@ footer {
     background-color: #f7f7f7;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 600px) {
     .hero-header h1 { font-size: 24px; }
     .hero-header img { width: 120px; height: 120px; }
     .nav-bar a { font-size: 14px; padding: 6px 10px; }
+    .contact-info a { display: block; margin: 5px 0; } /* Stack links on mobile */
 }
 </style>
-
 </head>
 <body>
 
     <header class="hero-header">
         <img src="DP.png" alt="Ajoy Rjbongshi">
-        
         <h1>Ajoy Rjbongshi</h1>
+
+        <div class="contact-info">
+            <a href="mailto:arjbongL@clemson.edu">Email</a> | 
+            <a href="www.linkedin.com/in/ajoyrjbongshi" target="_blank">LinkedIn</a> | 
+            <a href="https://scholar.google.com/citations?user=QKe_PmIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        </div>
 
         <nav class="nav-bar">
             <a onclick="showSection('about')" id="link-about" class="active-link">About Me</a>
-            <a onclick="showSection('education')" id="link-education">Education & Experience</a>
+            <a onclick="showSection('education')" id="link-education">Education</a>
             <a onclick="showSection('research')" id="link-research">Research</a>
             <a onclick="showSection('projects')" id="link-projects">Projects</a>
             <a onclick="showSection('teaching')" id="link-teaching">Teaching</a>
@@ -167,10 +199,6 @@ footer {
                 and statistical modeling for public health data</strong>. As both an instructor and teaching assistant, 
                 I enjoy mentoring students and helping them build strong quantitative foundations.
             </p>
-            <p>
-                My long-term goal is to pursue a research-focused career in academia or biomedical statistics, 
-                where I can contribute to methodological research and health data science.
-            </p>
         </section>
 
         <section id="education" class="section">
@@ -178,9 +206,13 @@ footer {
 
             <h3>Education</h3>
             <ul>
-                <li><strong>Clemson University</strong> — MS in Mathematical Sciences (Statistics), GPA 3.71</li>
-                <li><strong>University of Dhaka</strong> — MS in Statistics, GPA 3.76 (WES)</li>
-                <li><strong>University of Dhaka</strong> — BS in Statistics, GPA 3.96 (WES)</li>
+                <li>
+                    <strong><a href="https://www.clemson.edu/science/academics/departments/mathstat/about/profiles/arjbong" class="content-link" target="_blank">Clemson University</a></strong> 
+                    — MS in Mathematical Sciences (Statistics)
+                </li>
+                
+                <li><strong>University of Dhaka</strong> — MS in Statistics</li>
+                <li><strong>University of Dhaka</strong> — BS in Statistics</li>
             </ul>
 
             <h3>Professional Experience</h3>
@@ -222,17 +254,17 @@ footer {
             <div class="project-box">
                 <strong>COVID-19 Trend Analysis Shiny App</strong><br>
                 Interactive visualization of COVID-19 data in Bangladesh.<br>
-                <a href="https://ajoyrjbongshi.shinyapps.io/covid-19/" target="_blank">View App</a>
+                <a href="https://ajoyrjbongshi.shinyapps.io/covid-19/" class="content-link" target="_blank">View App</a>
             </div>
             <div class="project-box">
                 <strong>BDHS Socio-Demographic Analysis App</strong><br>
                 Shiny app for exploring BDHS survey trends (2007–2017).<br>
-                <a href="https://ajoyrjbongshi.shinyapps.io/Report_app/" target="_blank">View App</a>
+                <a href="https://ajoyrjbongshi.shinyapps.io/Report_app/" class="content-link" target="_blank">View App</a>
             </div>
             <div class="project-box">
                 <strong>Hypothesis Testing Interactive Tool</strong><br>
                 User-friendly interface for testing means and proportions.<br>
-                <a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/" target="_blank">View App</a>
+                <a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/" class="content-link" target="_blank">View App</a>
             </div>
         </section>
 
@@ -258,15 +290,12 @@ footer {
 
     <script>
         function showSection(sectionId) {
-            // 1. Hide all sections
             const sections = document.querySelectorAll('.section');
             sections.forEach(sec => sec.classList.remove('active-section'));
 
-            // 2. Show the selected section
             const activeSec = document.getElementById(sectionId);
             if(activeSec) activeSec.classList.add('active-section');
 
-            // 3. Update the Nav Button Colors
             const links = document.querySelectorAll('.nav-bar a');
             links.forEach(link => link.classList.remove('active-link'));
 
