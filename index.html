@@ -1,117 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ajoy Rjbongshi | Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        h1, h2 { color: #333; }
-        .section { margin-bottom: 40px; }
-        a { color: #0077cc; }
-    </style>
+<meta charset="UTF-8">
+<title>Ajoy Rjbongshi | Academic Portfolio</title>
+
+<style>
+/* Overall Layout */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f7f7f7;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 20px;
+}
+
+.sidebar img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: block;
+    margin: 10px auto;
+    border: 3px solid #ecf0f1;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sidebar a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #ecf0f1;
+    display: block;
+    font-size: 17px;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    max-width: 900px;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+ul {
+    line-height: 1.7;
+}
+
+.project-box {
+    background: white;
+    padding: 15px;
+    border-left: 4px solid #2c3e50;
+    margin-bottom: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.08);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Ajoy Rjbongshi</h1>
-<p>Clemson, South Carolina, USA</p>
+<!-- Sidebar -->
+<div class="sidebar">
+    <img src="profile.jpg" alt="Profile Photo">
+    <h2>Ajoy Rjbongshi</h2>
+
+    <a href="#about">About Me</a>
+    <a href="#education">Education & Experience</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#teaching">Teaching</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+
+<section id="about" class="section">
+<h2>About Me</h2>
 <p>
-📧 <a href="mailto:ajoyraj2@gmail.com">ajoyraj2@gmail.com</a><br>
-🔗 <a href="https://linkedin.com/in/ajoyrjbongshi">LinkedIn</a> |
-<a href="https://github.com/Ajoyrjbongshi">GitHub</a> |
-<a href="https://scholar.google.com/citations?user=QKe_PmIAAAAJ">Google Scholar</a> |
-<a href="https://sites.google.com/view/ajoy-rjbongshi">Website</a>
+I am a graduate student in the <strong>Master of Science in Mathematical Sciences (Statistics)</strong> 
+program at Clemson University. My academic interests lie primarily in 
+<strong>survival analysis, biostatistics, causal inference, machine learning, and clinical research</strong>. 
+I enjoy statistical computing, data visualization, and method development for high-dimensional data.
 </p>
 
-<hr>
-
-<div class="section">
-<h2>Education</h2>
-<ul>
-<li><b>Clemson University</b>, MS in Mathematical Sciences (Statistics), GPA: 3.71</li>
-<li><b>University of Dhaka</b>, MS in Statistics, GPA 3.76 (WES)</li>
-<li><b>University of Dhaka</b>, BS in Statistics, GPA 3.96 (WES)</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Work Experience</h2>
-
-<h3>Instructor (Graduate Teacher of Record), Clemson University</h3>
-<ul>
-<li>Teaching STAT-2220 Statistics in Everyday Life</li>
-<li>Preparing lectures, assessments, and course materials</li>
-<li>Providing student mentoring and statistical support</li>
-</ul>
-
-<h3>Graduate Teaching Assistant, Clemson University</h3>
-<ul>
-<li>Conducted R programming labs for Statistical Methods & Multivariate Analysis</li>
-<li>Grader for multiple statistics courses</li>
-<li>Held office hours for course support</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Publications</h2>
-<ul>
-<li><b>Machine learning-based prediction of energy poverty in Bangladesh</b>, SEPS (2025)</li>
-<li>Zero-Truncated Generalized Poisson for under-dispersed counts — BMC Public Health (Under review)</li>
-<li>Mental health trends in U.S. adults — IJMHA (Under review)</li>
-<li>Regional mental health variations in older adults — JAD (Under review)</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Research Interests</h2>
-<p>Biostatistics • Survival Analysis • Causal Inference • Clinical Trials  
-Machine Learning • Bayesian Statistics • Public Health • Longitudinal Data Analysis</p>
-</div>
-
-<div class="section">
-<h2>Research Experience</h2>
-
-<h3>Master’s Project — Clemson University</h3>
-<p><i>A Comprehensive Review of Machine Learning Approaches in Survival Analysis</i></p>
-
-<h3>Master’s Thesis — University of Dhaka</h3>
-<p><i>Machine Learning for Measuring & Predicting Multidimensional Energy Poverty</i></p>
-
-<h3>Undergraduate Project — University of Dhaka</h3>
-<p><i>Acute Respiratory Infections Among Under-Five Children in Bangladesh</i></p>
-</div>
-
-<div class="section">
-<h2>Technical Skills</h2>
 <p>
-<b>Programming:</b> R, Python, SQL, SAS, STATA, MATLAB, SPSS  
-<b>Tools:</b> ggplot2, Tidyverse, caret, tidymodels, Plotly, Matplotlib  
-<b>Writing:</b> LaTeX, RMarkdown, Quarto  
+I have authored research on <strong>energy poverty prediction, mental health epidemiology, 
+and statistical modeling for public health data</strong>. As both an instructor and teaching assistant, 
+I enjoy mentoring students and helping them build strong quantitative foundations.
 </p>
-</div>
 
-<div class="section">
-<h2>Achievements</h2>
+<p>
+My long-term goal is to pursue a research-focused career in academia or biomedical statistics, 
+where I can contribute to methodological research and health data science.
+</p>
+</section>
+
+<section id="education" class="section">
+<h2>Education & Experience</h2>
+
+<h3>Education</h3>
 <ul>
-<li>Dean’s Honor Award (2025)</li>
-<li>National Science and Technology Fellowship (2023)</li>
-<li>DBBL Scholarship (2018–2022)</li>
-<li>Government Honors Scholarship (2024)</li>
+    <li><strong>Clemson University</strong> — MS in Mathematical Sciences (Statistics), GPA 3.71</li>
+    <li><strong>University of Dhaka</strong> — MS in Statistics, GPA 3.76 (WES)</li>
+    <li><strong>University of Dhaka</strong> — BS in Statistics, GPA 3.96 (WES)</li>
 </ul>
-</div>
 
-<div class="section">
-<h2>Interactive Apps</h2>
+<h3>Professional Experience</h3>
+
+<h4>Graduate Teacher of Record — Clemson University</h4>
 <ul>
-<li><a href="https://ajoyrjbongshi.shinyapps.io/covid-19/">COVID-19 Trend Analysis App</a></li>
-<li><a href="https://ajoyrjbongshi.shinyapps.io/Report_app/">Industrial Statistics App</a></li>
-<li><a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/">Hypothesis Testing App</a></li>
+    <li>Instructor for STAT-2220: Statistics in Everyday Life</li>
+    <li>Delivering lectures, designing assessments, and mentoring students</li>
 </ul>
+
+<h4>Graduate Teaching Assistant — Clemson University</h4>
+<ul>
+    <li>R programming labs for Statistical Methods and Multivariate Analysis</li>
+    <li>Grader and academic support for multiple statistics courses</li>
+</ul>
+</section>
+
+<section id="research" class="section">
+<h2>Research</h2>
+
+<h3>Publications & Submitted Papers</h3>
+<ul>
+    <li><strong>Machine learning-based prediction of energy poverty</strong>, SEPS (2025)</li>
+    <li><strong>A Zero-Truncated Generalized Poisson Approach</strong>, BMC Public Health (Under review)</li>
+    <li>Mental health disorder trends in U.S. adults — IJMHA (Under review)</li>
+    <li>Regional mental health trends in older adults — JAD (Under review)</li>
+</ul>
+
+<h3>Research Projects</h3>
+
+<div class="project-box">
+    <strong>Machine Learning in Survival Analysis (Master’s Project)</strong><br>
+    Clemson University — 2025–Present
 </div>
 
-<hr>
+<div class="project-box">
+    <strong>Multidimensional Energy Poverty in Bangladesh (Master’s Thesis)</strong><br>
+    Examined MEPI trends and predictors using ML models.
+</div>
 
-<p>© 2025 Ajoy Rjbongshi</p>
+<div class="project-box">
+    <strong>Determinants of Acute Respiratory Infections (Undergraduate Project)</strong><br>
+    Logistic regression analysis using BDHS 2017–18 data.
+</div>
+</section>
 
+<section id="projects" class="section">
+<h2>Projects</h2>
+
+<div class="project-box">
+    <strong>COVID-19 Trend Analysis Shiny App</strong><br>
+    Interactive visualization of COVID-19 data in Bangladesh.<br>
+    <a href="https://ajoyrjbongshi.shinyapps.io/covid-19/" target="_blank">View App</a>
+</div>
+
+<div class="project-box">
+    <strong>BDHS Socio-Demographic Analysis App</strong><br>
+    Shiny app for exploring BDHS survey trends (2007–2017).<br>
+    <a href="https://ajoyrjbongshi.shinyapps.io/Report_app/" target="_blank">View App</a>
+</div>
+
+<div class="project-box">
+    <strong>Hypothesis Testing Interactive Tool</strong><br>
+    User-friendly interface for testing means and proportions.<br>
+    <a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/" target="_blank">View App</a>
+</div>
+</section>
+
+<section id="teaching" class="section">
+<h2>Teaching</h2>
+
+<h3>Instructor — Clemson University</h3>
+<ul>
+    <li>STAT-2220: Statistics in Everyday Life</li>
+    <li>Designed lectures, exercises, and assessments</li>
+    <li>Provided student mentoring and statistical support</li>
+</ul>
+
+<h3>Graduate Teaching Assistant</h3>
+<ul>
+    <li>Led R programming labs</li>
+    <li>Graded projects and exams</li>
+    <li>Supported students through office hours</li>
+</ul>
+</section>
+
+<footer>
+    © 2025 Ajoy Rjbongshi — Clemson University
+</footer>
+
+</div>
 </body>
 </html>
