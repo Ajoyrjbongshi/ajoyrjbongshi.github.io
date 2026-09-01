@@ -53,29 +53,30 @@
       padding: 3rem 2rem 2.5rem;
     }
 
-.identity {
-  display: flex;
-  align-items: center;
-  gap: 2.4rem;
-}
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+    }
 
-.profile-frame {
-  width: 220px;
-  height: 220px;
-  flex: 0 0 220px;
-  display: grid;
-  place-items: center;
-}
+    .profile-frame {
+      width: 220px;
+      height: 220px;
+      flex: 0 0 220px;
+      display: grid;
+      place-items: center;
+    }
 
-.profile-image {
-  width: 170px;
-  height: 170px;
-  object-fit: cover;
-  border: 4px solid white;
-  border-radius: 50%;
-  transform: scale(1.12);
-  transform-origin: center;
-}
+    .profile-image {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border: 4px solid white;
+      border-radius: 50%;
+      transform: scale(1.12);
+      transform-origin: center;
+      transition: transform 0.1s ease-out;
+    }
 
     .eyebrow,
     .section-kicker,
@@ -331,18 +332,19 @@
         padding-right: 1.2rem;
       }
 
-     .identity {
-    display: block;
+      .identity {
+        display: block;
       }
 
-    .profile-frame {
-    width: 160px;
-    height: 160px;
-    }
-  
-    .profile-image {
-    width: 120px;
-    height: 120px;
+      .profile-frame {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 1.5rem;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
       }
 
       .contact {
@@ -359,49 +361,23 @@
   </style>
 </head>
 
-
-<script>
-  const profilePhoto = document.querySelector(".profile-image");
-
-  const initialScale = 1.45;
-  const scrollDistance = 500;
-
-  function resizePhotoOnScroll() {
-    const scrollAmount = Math.min(window.scrollY / scrollDistance, 1);
-
-    const scale =
-      initialScale - (initialScale - 1) * scrollAmount;
-
-    profilePhoto.style.transform = `scale(${scale})`;
-  }
-
-  window.addEventListener("scroll", resizePhotoOnScroll, {
-    passive: true
-  });
-
-  resizePhotoOnScroll();
-</script>
-
-  
-
 <body>
 
 <header class="site-header">
   <div class="header-inner">
     <div class="identity">
-     <div class="profile-frame">
-    <img
-      class="profile-image"
-      id="profile-photo"
-      src="Ajoy.png"
-      alt="Portrait of Ajoy Rjbongshi"
-    >
+      <div class="profile-frame">
+        <img
+          class="profile-image"
+          id="profile-photo"
+          src="Ajoy.png"
+          alt="Portrait of Ajoy Rjbongshi"
+        >
+      </div>
 
       <div>
         <p class="eyebrow">Academic Portfolio · Statistics</p>
-
-        <h1>Ajoy Rjbongshi </h1>
-
+        <h1>Ajoy Rjbongshi</h1>
         <p class="tagline">
           Statistician and educator working at the intersection of
           biostatistics, public health, survival analysis, and machine learning.
@@ -409,29 +385,9 @@
 
         <div class="contact">
           <a href="mailto:ajoyraj2@gmail.com">ajoyraj2@gmail.com</a>
-
-          <a
-            href="https://www.linkedin.com/in/ajoyrjbongshi"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://scholar.google.com/citations?user=QKe_PmIAAAAJ&amp;hl=en"
-            target="_blank"
-            rel="noopener"
-          >
-            Google Scholar
-          </a>
-          <a
-  href="https://www.researchgate.net/profile/Ajoy-Rjbongshi"
-  target="_blank"
-  rel="noopener"
->
-  ResearchGate
-</a>      
+          <a href="https://www.linkedin.com/in/ajoyrjbongshi" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=QKe_PmIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://www.researchgate.net/profile/Ajoy-Rjbongshi" target="_blank" rel="noopener">ResearchGate</a>
         </div>
       </div>
     </div>
@@ -492,30 +448,22 @@
 
       <div class="entry">
         <h3>Ph.D. in Statistics</h3>
-        <p class="meta">
-          George Mason University · Fairfax, Virginia · August 2026 - present
-        </p>
+        <p class="meta">George Mason University · Fairfax, Virginia · August 2026 – present</p>
       </div>
 
       <div class="entry">
         <h3>M.S. in Mathematical Sciences, Concentration in Statistics</h3>
-        <p class="meta">
-          Clemson University · Clemson, South Carolina · August 2024 – August 2026
-        </p>
+        <p class="meta">Clemson University · Clemson, South Carolina · August 2024 – August 2026</p>
       </div>
 
       <div class="entry">
         <h3>M.S. in Statistics</h3>
-        <p class="meta">
-          University of Dhaka · Dhaka, Bangladesh · March 2023 – July 2024
-        </p>
+        <p class="meta">University of Dhaka · Dhaka, Bangladesh · March 2023 – July 2024</p>
       </div>
 
       <div class="entry">
         <h3>B.S. in Statistics</h3>
-        <p class="meta">
-          University of Dhaka · Dhaka, Bangladesh · January 2018 – June 2023
-        </p>
+        <p class="meta">University of Dhaka · Dhaka, Bangladesh · January 2018 – June 2023</p>
       </div>
     </section>
 
@@ -524,61 +472,29 @@
       <h2>Research Experience</h2>
 
       <div class="entry">
-        <h3>
-          Master’s Project · Survival Prediction in Breast Cancer Using SEER Data
-        </h3>
-        <p class="meta">
-          Clemson University · August 2025 – April 2026
-        </p>
+        <h3>Master’s Project · Survival Prediction in Breast Cancer Using SEER Data</h3>
+        <p class="meta">Clemson University · August 2025 – April 2026</p>
         <ul>
-          <li>
-            Applied survival and Cox proportional-hazards models to identify
-            prognostic factors associated with breast cancer survival using SEER data.
-          </li>
-          <li>
-            Compared conventional and machine-learning models to evaluate
-            predictive performance and identify key survival predictors.
-          </li>
+          <li>Applied survival and Cox proportional-hazards models to identify prognostic factors associated with breast cancer survival using SEER data.</li>
+          <li>Compared conventional and machine-learning models to evaluate predictive performance and identify key survival predictors.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <h3>
-          Master’s Thesis · Machine Learning-Based Approaches for Measuring
-          and Predicting Multidimensional Energy Poverty in Bangladesh
-        </h3>
-        <p class="meta">
-          University of Dhaka · July 2023 – July 2024
-        </p>
+        <h3>Master’s Thesis · Machine Learning-Based Approaches for Measuring and Predicting Multidimensional Energy Poverty in Bangladesh</h3>
+        <p class="meta">University of Dhaka · July 2023 – July 2024</p>
         <ul>
-          <li>
-            Analyzed multidimensional energy poverty trends and estimated the
-            MEPI across Bangladesh from 2007–2017.
-          </li>
-          <li>
-            Identified key determinants using supervised machine learning and
-            evaluated model performance with accuracy, sensitivity, and specificity.
-          </li>
+          <li>Analyzed multidimensional energy poverty trends and estimated the MEPI across Bangladesh from 2007–2017.</li>
+          <li>Identified key determinants using supervised machine learning and evaluated model performance with accuracy, sensitivity, and specificity.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <h3>
-          Undergraduate Research Project · Acute Respiratory Infections
-          Among Under-Five Children in Bangladesh
-        </h3>
-        <p class="meta">
-          University of Dhaka · January 2022 – November 2022
-        </p>
+        <h3>Undergraduate Research Project · Acute Respiratory Infections Among Under-Five Children in Bangladesh</h3>
+        <p class="meta">University of Dhaka · January 2022 – November 2022</p>
         <ul>
-          <li>
-            Analyzed Bangladesh Demographic and Health Survey 2017–18 data
-            to examine ARI trends.
-          </li>
-          <li>
-            Used bivariate analysis and multivariable logistic regression
-            to identify risk factors.
-          </li>
+          <li>Analyzed Bangladesh Demographic and Health Survey 2017–18 data to examine ARI trends.</li>
+          <li>Used bivariate analysis and multivariable logistic regression to identify risk factors.</li>
         </ul>
       </div>
     </section>
@@ -590,58 +506,30 @@
       <h3>Journal Articles</h3>
 
       <p class="publication">
-        Karmaker, S. C., <strong>Rjbongshi, A.</strong>, Pal, B., Sen, K. K.,
-        &amp; Chapman, A. J. (2025). Machine learning-based prediction of
-        energy poverty in Bangladesh: Unveiling key socioeconomic drivers
-        for targeted policy actions.
-        <em>Socio-Economic Planning Sciences, 99</em>, 102213.
-        <a
-          href="https://doi.org/10.1016/j.seps.2025.102213"
-          target="_blank"
-          rel="noopener"
-        >
-          DOI
-        </a>
+        Karmaker, S. C., <strong>Rjbongshi, A.</strong>, Pal, B., Sen, K. K., &amp; Chapman, A. J. (2025). Machine learning-based prediction of energy poverty in Bangladesh: Unveiling key socioeconomic drivers for targeted policy actions. <em>Socio-Economic Planning Sciences, 99</em>, 102213.
+        <a href="https://doi.org/10.1016/j.seps.2025.102213" target="_blank" rel="noopener">DOI</a>
       </p>
 
       <p class="publication">
-        <strong>Rjbongshi, A.</strong>, Ahmmad, M. R., Mazumder, S.,
-        &amp; Khan, M. T. F. (2025). National and regional trends in mental
-        health disorders among U.S. adults treated in the state mental health
-        system. <em>International Journal of Mental Health and Addiction</em>.
+        <strong>Rjbongshi, A.</strong>, Ahmmad, M. R., Mazumder, S., &amp; Khan, M. T. F. (2025). National and regional trends in mental health disorders among U.S. adults treated in the state mental health system. <em>International Journal of Mental Health and Addiction</em>.
       </p>
 
       <p class="publication">
-        Khan, M. T. F., Mazumder, S., Ahmmad, M. R.,
-        <strong>Rjbongshi, A.</strong>, Parvez, I., &amp; Manik, M. M. R.
-        (2025). Regional variations in trends of mental health disorders in
-        older adults treated in the U.S. state mental health system.
-        <em>Journal of Affective Disorders</em>.
+        Khan, M. T. F., Mazumder, S., Ahmmad, M. R., <strong>Rjbongshi, A.</strong>, Parvez, I., &amp; Manik, M. M. R. (2025). Regional variations in trends of mental health disorders in older adults treated in the U.S. state mental health system. <em>Journal of Affective Disorders</em>.
       </p>
 
       <p class="publication">
-        <strong>Rjbongshi, A.</strong>, Roy, S. K., Costa, N. S., &amp;
-        Ashiq, M. A. R. (2025). A zero-truncated generalized Poisson approach
-        to under-dispersed count data: Fertility patterns in Bangladesh, 2022.
-        <em>BMC Public Health</em>. Under review.
+        <strong>Rjbongshi, A.</strong>, Roy, S. K., Costa, N. S., &amp; Ashiq, M. A. R. (2025). A zero-truncated generalized Poisson approach to under-dispersed count data: Fertility patterns in Bangladesh, 2022. <em>BMC Public Health</em>. Under review.
       </p>
 
       <h3>Poster &amp; Conference Presentations</h3>
 
       <p class="publication">
-        Khan, M. T. F., Mazumder, S., Ahmmad, M. R.,
-        <strong>Rjbongshi, A.</strong>, Parvez, I., &amp; Manik, M. M. R.
-        (2025). “Regional variations in trends of mental health disorders in
-        older adults treated in the U.S. state mental health system.”
-        <em>Prisma Health Education and Research Institute Showcase 2025</em>.
+        Khan, M. T. F., Mazumder, S., Ahmmad, M. R., <strong>Rjbongshi, A.</strong>, Parvez, I., &amp; Manik, M. M. R. (2025). “Regional variations in trends of mental health disorders in older adults treated in the U.S. state mental health system.” <em>Prisma Health Education and Research Institute Showcase 2025</em>.
       </p>
 
       <p class="publication">
-        Mazumder, S., Khan, M. T. F., <strong>Rjbongshi, A.</strong>, Enan, A.,
-        Uddin, B., &amp; Roy, S. K. (2026). “How bullying, sleep patterns, and
-        parental history of depression shape adolescent mental health.”
-        Contributed paper presented at <em>Joint Statistical Meetings 2026</em>,
-        Boston, Massachusetts.
+        Mazumder, S., Khan, M. T. F., <strong>Rjbongshi, A.</strong>, Enan, A., Uddin, B., &amp; Roy, S. K. (2026). “How bullying, sleep patterns, and parental history of depression shape adolescent mental health.” Contributed paper presented at <em>Joint Statistical Meetings 2026</em>, Boston, Massachusetts.
       </p>
     </section>
 
@@ -651,48 +539,27 @@
 
       <div class="entry">
         <h3>Graduate Teaching Assistant · STAT 250: Introductory Statistics I</h3>
-        <p class="meta">
-          George Mason University · August 2026 – Present
-        </p>
+        <p class="meta">George Mason University · August 2026 – Present</p>
         <ul>
           <li>Hold office hours and grade assignments and examinations.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <h3>
-          Graduate Teacher of Record · STAT 2220: Statistics in Everyday Life
-        </h3>
-        <p class="meta">
-          Clemson University · August 2025 – June 2026
-        </p>
+        <h3>Graduate Teacher of Record · STAT 2220: Statistics in Everyday Life</h3>
+        <p class="meta">Clemson University · August 2025 – June 2026</p>
         <ul>
-          <li>
-            Delivered lectures that promoted critical thinking and statistical literacy.
-          </li>
-          <li>
-            Designed lesson plans, assignments, and assessments, and provided
-            individualized feedback.
-          </li>
+          <li>Delivered lectures that promoted critical thinking and statistical literacy.</li>
+          <li>Designed lesson plans, assignments, and assessments, and provided individualized feedback.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <h3>
-          Graduate Teaching Assistant · Statistical Methods I and
-          Multivariate Analysis
-        </h3>
-        <p class="meta">
-          Clemson University · August 2024 – July 2025
-        </p>
+        <h3>Graduate Teaching Assistant · Statistical Methods I and Multivariate Analysis</h3>
+        <p class="meta">Clemson University · August 2024 – July 2025</p>
         <ul>
-          <li>
-            Conducted R programming sessions, graded projects and lab exercises,
-            and held office hours.
-          </li>
-          <li>
-            Served as a grader for MATH 3020: Statistics for Science &amp; Engineering.
-          </li>
+          <li>Conducted R programming sessions, graded projects and lab exercises, and held office hours.</li>
+          <li>Served as a grader for MATH 3020: Statistics for Science &amp; Engineering.</li>
         </ul>
       </div>
     </section>
@@ -706,28 +573,15 @@
           <h3>COVID-19 Trend Analysis</h3>
           <p>
             Shiny application for visualizing COVID-19 trends in Bangladesh.
-            <a
-              href="https://ajoyrjbongshi.shinyapps.io/covid-19/"
-              target="_blank"
-              rel="noopener"
-            >
-              View app
-            </a>
+            <a href="https://ajoyrjbongshi.shinyapps.io/covid-19/" target="_blank" rel="noopener">View app</a>
           </p>
         </article>
 
         <article class="project">
           <h3>BDHS Socio-Demographic Analysis</h3>
           <p>
-            Interactive tool for exploring Bangladesh Demographic and Health
-            Survey trends from 2007–2017/18.
-            <a
-              href="https://ajoyrjbongshi.shinyapps.io/Report_app/"
-              target="_blank"
-              rel="noopener"
-            >
-              View app
-            </a>
+            Interactive tool for exploring Bangladesh Demographic and Health Survey trends from 2007–2017/18.
+            <a href="https://ajoyrjbongshi.shinyapps.io/Report_app/" target="_blank" rel="noopener">View app</a>
           </p>
         </article>
 
@@ -735,13 +589,7 @@
           <h3>Hypothesis Testing Tool</h3>
           <p>
             Shiny interface for hypothesis tests involving means and proportions.
-            <a
-              href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/"
-              target="_blank"
-              rel="noopener"
-            >
-              View app
-            </a>
+            <a href="https://ajoyrjbongshi.shinyapps.io/Hypothesis_Test/" target="_blank" rel="noopener">View app</a>
           </p>
         </article>
       </div>
@@ -790,22 +638,10 @@
       <h3>Honors &amp; Awards</h3>
 
       <ul>
-        <li>
-          <strong>Dean’s Honor Award</strong> (2025),
-          Science Faculty, University of Dhaka
-        </li>
-        <li>
-          <strong>Government Honours Scholarship</strong> (2024),
-          Directorate of Secondary and Higher Education, Bangladesh
-        </li>
-        <li>
-          <strong>National Science and Technology Fellowship</strong> (2023),
-          Ministry of Science and Technology, Bangladesh
-        </li>
-        <li>
-          <strong>DBBL Scholarship</strong> (2018–2022),
-          Dutch Bangla Bank Foundation &amp; Limited
-        </li>
+        <li><strong>Dean’s Honor Award</strong> (2025), Science Faculty, University of Dhaka</li>
+        <li><strong>Government Honours Scholarship</strong> (2024), Directorate of Secondary and Higher Education, Bangladesh</li>
+        <li><strong>National Science and Technology Fellowship</strong> (2023), Ministry of Science and Technology, Bangladesh</li>
+        <li><strong>DBBL Scholarship</strong> (2018–2022), Dutch Bangla Bank Foundation &amp; Limited</li>
       </ul>
     </section>
 
@@ -815,6 +651,24 @@
 <footer>
   © 2026 Ajoy Rjbongshi · Statistics
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const profilePhoto = document.querySelector(".profile-image");
+    const initialScale = 1.45;
+    const scrollDistance = 500;
+
+    function resizePhotoOnScroll() {
+      if (!profilePhoto) return;
+      const scrollAmount = Math.min(window.scrollY / scrollDistance, 1);
+      const scale = initialScale - (initialScale - 1) * scrollAmount;
+      profilePhoto.style.transform = `scale(${scale})`;
+    }
+
+    window.addEventListener("scroll", resizePhotoOnScroll, { passive: true });
+    resizePhotoOnScroll();
+  });
+</script>
 
 </body>
 </html>
